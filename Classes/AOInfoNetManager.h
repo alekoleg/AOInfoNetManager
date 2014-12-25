@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const AOInfoNetErrorDomain;
+
+typedef void(^AOInfoNetArraySuccessBlock)(NSArray *objects);
+typedef void(^AOInfoNetFailBlock)(NSError *error);
+
 @interface AOInfoNetManager : NSObject
 
 + (instancetype)sharedManager;
 
+- (void)getOurAppsWithSuccess:(AOInfoNetArraySuccessBlock)success fail:(AOInfoNetFailBlock)fail;
 
 @end

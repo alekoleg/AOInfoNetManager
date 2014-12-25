@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *redireсtURL;
+@property (nonatomic, strong) NSString *excludeBundle;
 @property (nonatomic, strong) AOFile *icon;
 
 @end

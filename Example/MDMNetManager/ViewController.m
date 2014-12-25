@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AOInfoNetManager.h"
 
 @interface ViewController ()
 
@@ -17,11 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [[AOInfoNetManager sharedManager] getOurAppsWithSuccess:^(NSArray *objects) {
+        
+    } fail:^(NSError *error) {
+        
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
