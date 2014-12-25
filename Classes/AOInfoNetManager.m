@@ -36,6 +36,7 @@ NSString * const AOInfoNetErrorDomain = @"AOInfoNetErrorDomain";
         _manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
         _manager.responseSerializer = [AFJSONResponseSerializer serializer];
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        _manager.operationQueue.maxConcurrentOperationCount = 1;
         [_manager.requestSerializer setValue:@"vkXzxw03xqRvYPEec1BBOgFqOob9X8Y1D6i2iE23" forHTTPHeaderField:@"X-Parse-Application-Id"];
         [_manager.requestSerializer setValue:@"WD2m1TpPOo7mYOV2rEJ7RjD6MsIzLTgTidacS7le" forHTTPHeaderField:@"X-Parse-REST-API-Key"];
     }
