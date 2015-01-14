@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import <MTLJSONAdapter.h>
 #import "AOAppModel.h"
+#import "AOAdsModel.h"
 
 static NSString * const AOInfoNetParseApiURL = @"https://api.parse.com/1/";
 NSString * const AOInfoNetErrorDomain = @"AOInfoNetErrorDomain";
@@ -62,9 +63,53 @@ NSString * const AOInfoNetErrorDomain = @"AOInfoNetErrorDomain";
     } fail:fail];
 }
 
+- (void)getAdsWithSuccess:(AOInfoNetArraySuccessBlock)success fail:(AOInfoNetFailBlock)fail {
+
+    NSString *path = @"classes/Ads";
+    NSDictionary *dic = @{ @"enable" : @{ @"$ne" : @NO}};
+    NSString *whereString = [self whereQueryStringFromJSONDic:dic];
+    NSDictionary *params =  @{ @"where" : whereString };
+    
+    [self getWithPath:path params:params class:[AOAdsModel class] keyMap:@"results" complete:^(id object) {
+        NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (%K CONTAINS[c] %@)", @"excludeBundle", bundleId];
+        NSArray *results = [object filteredArrayUsingPredicate:predicate];
+        if (success) {
+            success(results);
+        }
+    } fail:fail];
+}
+
+- (void)loadImagesFromLinks:(NSArray *)links success:(AOInfoNetArraySuccessBlock)success fail:(AOInfoNetFailBlock)fail {
+ 
+    [self.manager.operationQueue addOperationWithBlock:^{
+        NSMutableArray *images = [NSMutableArray array];
+        for (NSString *link in links) {
+            NSURL *url = [NSURL URLWithString:link];
+            NSError *error = nil;
+            NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+            if (error) {
+                if (fail) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        fail(error);
+                    });
+                }
+                return;
+            }
+            UIImage *image = [UIImage imageWithData:data];
+            [images addObject:image];
+        }
+        if (success) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(images);
+            });
+        }
+    }];
+}
+
 #pragma mark - Helpers -
 /**
- * Общий метод получения данныхр
+ * Общий метод получения данных
  * @param params - параметры передаваемые на сервер, может быть NSDictionaty или NSArray
  * @param class - класс в поторых нужно смапить ответ
  * @param keyMap - ключ по которому нужно достать ответ от сервера, так как в ответе может быть еще служебная инфа

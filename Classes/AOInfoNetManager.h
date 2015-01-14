@@ -17,6 +17,19 @@ typedef void(^AOInfoNetFailBlock)(NSError *error);
 
 + (instancetype)sharedManager;
 
+/**
+ *   load apps info usualy for info section
+ */
 - (void)getOurAppsWithSuccess:(AOInfoNetArraySuccessBlock)success fail:(AOInfoNetFailBlock)fail;
+
+/**
+ *   load ads about other apps info
+ */
+- (void)getAdsWithSuccess:(AOInfoNetArraySuccessBlock)success fail:(AOInfoNetFailBlock)fail;
+
+/**
+ *   load array of images
+ */
+- (void)loadImagesFromLinks:(NSArray *)links success:(AOInfoNetArraySuccessBlock)success fail:(AOInfoNetFailBlock)fail;
 
 @end

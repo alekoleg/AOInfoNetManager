@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		558313CF5D7DF4DBC246DBEF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC1606448D6F34440BA175A /* libPods.a */; };
 		B388AA7C1A4B089F00FD626E /* AOFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B388AA7B1A4B089F00FD626E /* AOFile.m */; };
+		B3B426651A66B3010020BE9E /* AOAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B426641A66B3010020BE9E /* AOAdsModel.m */; };
 		B3F635001A4B00FB00A2D4B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F634FF1A4B00FB00A2D4B5 /* main.m */; };
 		B3F635031A4B00FB00A2D4B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F635021A4B00FB00A2D4B5 /* AppDelegate.m */; };
 		B3F635061A4B00FC00A2D4B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F635051A4B00FC00A2D4B5 /* ViewController.m */; };
@@ -34,6 +35,8 @@
 		9412ACD037C2F8DF12F5B839 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B388AA7A1A4B089F00FD626E /* AOFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOFile.h; sourceTree = "<group>"; };
 		B388AA7B1A4B089F00FD626E /* AOFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOFile.m; sourceTree = "<group>"; };
+		B3B426631A66B3010020BE9E /* AOAdsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAdsModel.h; sourceTree = "<group>"; };
+		B3B426641A66B3010020BE9E /* AOAdsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAdsModel.m; sourceTree = "<group>"; };
 		B3F634FA1A4B00FA00A2D4B5 /* MDMNetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDMNetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F634FE1A4B00FA00A2D4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F634FF1A4B00FB00A2D4B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				B3F635271A4B031E00A2D4B5 /* AOInfoNetManager.m */,
 				B3F635291A4B03B100A2D4B5 /* AOAppModel.h */,
 				B3F6352A1A4B03B100A2D4B5 /* AOAppModel.m */,
+				B3B426631A66B3010020BE9E /* AOAdsModel.h */,
+				B3B426641A66B3010020BE9E /* AOAdsModel.m */,
 				B388AA7A1A4B089F00FD626E /* AOFile.h */,
 				B388AA7B1A4B089F00FD626E /* AOFile.m */,
 			);
@@ -308,6 +313,7 @@
 				B3F635031A4B00FB00A2D4B5 /* AppDelegate.m in Sources */,
 				B388AA7C1A4B089F00FD626E /* AOFile.m in Sources */,
 				B3F635001A4B00FB00A2D4B5 /* main.m in Sources */,
+				B3B426651A66B3010020BE9E /* AOAdsModel.m in Sources */,
 				B3F635281A4B031E00A2D4B5 /* AOInfoNetManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
