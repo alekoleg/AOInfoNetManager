@@ -12,6 +12,7 @@
 @class AOFile;
 @interface AOAdsModel : MTLModel <MTLJSONSerializing>
 
+@property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) NSString *link;
 @property (nonatomic, strong) NSString *schemeLink;
 @property (nonatomic, strong) NSNumber *shouldShare;
