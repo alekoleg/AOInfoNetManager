@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *schemeLink;
 @property (nonatomic, strong) NSNumber *shouldShare;
 @property (nonatomic, strong) NSString *excludeBundle;
+@property (nonatomic, strong) NSString *buttonTitle;
 
 @property (nonatomic, strong) AOFile *imageOne;
 @property (nonatomic, strong) AOFile *imageSecond;
