@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AOInfoNetManager"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Parse client manager for Info APP"
   s.description  = "Networking part of inforamtion app"
   s.homepage     = "https://github.com/alekoleg/AOInfoNetManager.git"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*.{h,m}'
   s.public_header_files = 'Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit'
-  s.dependency 'AFNetworking', '~> 2.5.0'
+  s.dependency 'AFNetworking', '~> 2.5.2'
   s.dependency 'Mantle', '~> 1.5.1'
 
 end
